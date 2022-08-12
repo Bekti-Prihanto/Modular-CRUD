@@ -5,6 +5,8 @@ namespace Modules\Categories\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Inertia\Inertia;
+use Modules\Categories\Entities\Category;
 
 class CategoriesController extends Controller
 {
@@ -14,7 +16,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('categories::index');
+        return Inertia::render('Categories::Index', [
+            'categories' => Category::all(),
+            'auth' => auth()->user()->hasRole('admin'),
+        ]);
     }
 
     /**
@@ -23,7 +28,9 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories::create');
+        return Inertia::render('Categories::Create', [
+            'auth' => auth()->user()->hasRole('admin'),
+        ]);
     }
 
     /**
@@ -33,7 +40,13 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request -> validate([
+            'name' => 'required',
+        ]);
+        
+        Category::create($validatedData);
+
+        return redirect('/categories');
     }
 
     /**
@@ -53,7 +66,11 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        return view('categories::edit');
+        $category = Category::find($id);
+        return Inertia::render('Categories::Edit',[
+            'category' => $category,
+            'auth' => auth()->user()->hasRole('admin'),
+        ]);
     }
 
     /**
@@ -64,7 +81,12 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Category::where('id', $id)
+            ->update($request->validate([
+                'name' => ['required'],
+            ]));
+        
+        return redirect('/categories');
     }
 
     /**
@@ -74,6 +96,6 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
     }
 }

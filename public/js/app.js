@@ -8,6 +8,18 @@
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Categories/Resources/assets/js/Pages/Create.vue": [
+		"./Modules/Categories/Resources/assets/js/Pages/Create.vue",
+		"Modules_Categories_Resources_assets_js_Pages_Create_vue"
+	],
+	"./Categories/Resources/assets/js/Pages/Edit.vue": [
+		"./Modules/Categories/Resources/assets/js/Pages/Edit.vue",
+		"Modules_Categories_Resources_assets_js_Pages_Edit_vue"
+	],
+	"./Categories/Resources/assets/js/Pages/Index.vue": [
+		"./Modules/Categories/Resources/assets/js/Pages/Index.vue",
+		"Modules_Categories_Resources_assets_js_Pages_Index_vue"
+	],
 	"./Posts/Resources/assets/js/Pages/Admin/Create.vue": [
 		"./Modules/Posts/Resources/assets/js/Pages/Admin/Create.vue",
 		"Modules_Posts_Resources_assets_js_Pages_Admin_Create_vue"
@@ -46219,7 +46231,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"Modules_Posts_Resources_assets_js_Pages_Admin_Create_vue":1,"Modules_Posts_Resources_assets_js_Pages_Admin_Edit_vue":1,"Modules_Posts_Resources_assets_js_Pages_Admin_Index_vue":1,"Modules_Posts_Resources_assets_js_Pages_Create_vue":1,"Modules_Posts_Resources_assets_js_Pages_Edit_vue":1,"Modules_Posts_Resources_assets_js_Pages_Home_vue":1,"Modules_Posts_Resources_assets_js_Pages_Show_vue":1,"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Pages_PrivacyPolicy_vue":1,"resources_js_Pages_Profile_Partials_DeleteUserForm_vue":1,"resources_js_Pages_Profile_Partials_LogoutOtherBrowserSessionsForm_vue":1,"resources_js_Pages_Profile_Partials_TwoFactorAuthenticationForm_vue":1,"resources_js_Pages_Profile_Partials_UpdatePasswordForm_vue":1,"resources_js_Pages_Profile_Partials_UpdateProfileInformationForm_vue":1,"resources_js_Pages_Profile_Show_vue":1,"resources_js_Pages_TermsOfService_vue":1,"resources_js_Pages_Welcome_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"Modules_Categories_Resources_assets_js_Pages_Create_vue":1,"Modules_Categories_Resources_assets_js_Pages_Edit_vue":1,"Modules_Categories_Resources_assets_js_Pages_Index_vue":1,"Modules_Posts_Resources_assets_js_Pages_Admin_Create_vue":1,"Modules_Posts_Resources_assets_js_Pages_Admin_Edit_vue":1,"Modules_Posts_Resources_assets_js_Pages_Admin_Index_vue":1,"Modules_Posts_Resources_assets_js_Pages_Create_vue":1,"Modules_Posts_Resources_assets_js_Pages_Edit_vue":1,"Modules_Posts_Resources_assets_js_Pages_Home_vue":1,"Modules_Posts_Resources_assets_js_Pages_Show_vue":1,"resources_js_Pages_API_Index_vue":1,"resources_js_Pages_API_Partials_ApiTokenManager_vue":1,"resources_js_Pages_Auth_ConfirmPassword_vue":1,"resources_js_Pages_Auth_ForgotPassword_vue":1,"resources_js_Pages_Auth_Login_vue":1,"resources_js_Pages_Auth_Register_vue":1,"resources_js_Pages_Auth_ResetPassword_vue":1,"resources_js_Pages_Auth_TwoFactorChallenge_vue":1,"resources_js_Pages_Auth_VerifyEmail_vue":1,"resources_js_Pages_Dashboard_vue":1,"resources_js_Pages_PrivacyPolicy_vue":1,"resources_js_Pages_Profile_Partials_DeleteUserForm_vue":1,"resources_js_Pages_Profile_Partials_LogoutOtherBrowserSessionsForm_vue":1,"resources_js_Pages_Profile_Partials_TwoFactorAuthenticationForm_vue":1,"resources_js_Pages_Profile_Partials_UpdatePasswordForm_vue":1,"resources_js_Pages_Profile_Partials_UpdateProfileInformationForm_vue":1,"resources_js_Pages_Profile_Show_vue":1,"resources_js_Pages_TermsOfService_vue":1,"resources_js_Pages_Welcome_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

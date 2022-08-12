@@ -86,7 +86,13 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::where('id', $id)
+            ->update($request->validate([
+                'name' => ['required'],
+                'email' => ['required'],
+            ]));
+        
+        return redirect('/users');
     }
 
     /**

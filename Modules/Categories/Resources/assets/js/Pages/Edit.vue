@@ -4,15 +4,24 @@
         <jet-nav-link :href="route('posts.index')" :active="route().current('posts.index')">
             My Posts
         </jet-nav-link>
+        
+        <jet-nav-link :href="route('categories.index')" :active="route().current('categories.edit')">
+            Categories
+        </jet-nav-link>
                 
-        <jet-nav-link :href="route('users.index')" :active="route().current('users.index')">
+        <jet-nav-link :href="route('users.index')" :active="route().current('users.index')" v-if="auth">
             Users
         </jet-nav-link>
+        
+        <jet-nav-link :href="route('users.index')" v-if="auth">
+            Modules
+        </jet-nav-link>
+        
     </template>
 
     <template #header>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Edit User
+            Edit Catagory
         </h2>
     </template>
 
@@ -29,16 +38,8 @@
                             <!-- <p class="mt-2 text-sm text-red-600 dark:text-red-500" v-if="errors.name">
                                 <span class="font-medium">Oops!</span> {{errors.name}}</p> -->
                         </div>
-                        <div class="mb-4">
-                            <label class="mb-3 block text-base font-medium text-[#07074D]" for="email">
-                                Email
-                            </label>
-                            <input rows="5" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" id="email" type="text" placeholder="email" v-model="form.email">
-                            <!-- <p class="mt-2 text-sm text-red-600 dark:text-red-500" v-if="errors.email">
-                            <span class="font-medium">Oops!</span> {{errors.email}}</p> -->
-                        </div>
                         <button class="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:ring-blue-300 mr-3" type="submit">Update</button>
-                        <Link href="/users">                            
+                        <Link :href="route('categories.index')">                            
                             <button class="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-white bg-green-500 hover:bg-green-600 active:bg-green-700 focus:ring-green-300" type="submit">Kembali</button>
                         </Link>
                     </form>
@@ -62,14 +63,13 @@ import JetNavLink from '@/Jetstream/NavLink.vue'
         data(){
             return{
                 form:{
-                    name:this.user.name,
-                    email:this.user.email,
+                    name:this.category.name,
                 }
             }
         },
         methods:{
             update(){
-                this.$inertia.put('/users/' + this.user.id, this.form)
+                this.$inertia.put('/categories/' + this.category.id, this.form)
             }
         },
          components: {
@@ -78,7 +78,8 @@ import JetNavLink from '@/Jetstream/NavLink.vue'
             JetNavLink
         },
         props:{
-            user: Object,
+            category: Object,
+            auth: Boolean
         }
     }
 </script>

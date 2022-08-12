@@ -20,6 +20,6 @@ Route::controller(CategoriesController::class)->group(function() {
     Route::get('/categories', 'index')->name('categories.index');
     Route::get('/categories/create', 'create')->name('categories.create');
     Route::post('/categories', 'store')->name('categories.store');
-    Route::get('/categories/{id}/edit', 'edit')->name('user.edit');
+    Route::get('/categories/{id}/edit', 'edit')->name('categories.edit');
     Route::put('/categories/{id}', 'update');
 });
