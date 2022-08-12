@@ -1,5 +1,7 @@
 {
     "Posts": true,
     "Controller": true,
-    "UserController": true
+    "UserController": true,
+    "Category": true,
+    "Categories": true
 }
